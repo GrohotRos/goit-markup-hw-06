@@ -46,16 +46,16 @@ button {
 }
 
 .container {
-    width: 1158px;
+    max-width: 288px;
+    padding-left: 16px;
+    padding-right: 16px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 .section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 96px;
+    padding-bottom: 96px;
 }
 
 /* ========== Common styles ========== */
@@ -64,13 +64,15 @@ button {
 
 .site-header {
     border-bottom: 1px solid #e7e9fc;
-    width: 1440px;
+    width: 320px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .top-container {
+    padding-left: 0;
+    padding-right: 0;
     display: flex;
     justify-content: space-between;
 }
@@ -90,7 +92,6 @@ button {
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    margin-right: 76px;
 }
 
 .logo-top {
@@ -98,7 +99,7 @@ button {
 }
 
 .menu-header {
-    margin-left: 76px;
+    margin-left: 120px;
 }
 
 .menu-header .current::after {
@@ -124,21 +125,24 @@ button {
     color: #2e2f42;
     font-weight: 500;
     line-height: 1.5;
-    letter-spacing: 0.02em;
     padding-top: 24px;
     padding-bottom: 24px;
 }
 
 .site-address {
-    font-size: 16px;
+    font-size: 12px;
     font-style: normal;
     display: flex;
-    width: 360px;
-    column-gap: 40px;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+    width: 119px;
 }
 
 .site-menu {
-    column-gap: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
 }
 
 .address-link {
@@ -147,8 +151,6 @@ button {
     color: #434455;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    padding-top: 24px;
-    padding-bottom: 24px;
 }
 
 .menu-link:hover,
@@ -158,6 +160,47 @@ button {
     color: #404BBF;
 }
 
+.menu-mobile {
+    padding: 16px 0;
+    line-height: 0;
+    border: none;
+    background-color: transparent;
+}
+
+@media (max-width: 767px) {
+    .menu-header,
+    .site-address {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-mobile {
+        display: none;
+    }
+
+    .site-header {
+        width: 768px;
+    }
+}
+
+@media (min-width: 1158px) {
+    .site-header {
+        width: 1158px;
+    }
+
+    .site-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 40px;
+    }
+
+    .top-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 /* ========== HEADER ========== */
 
 /* ========== MAIN ========== */
@@ -166,22 +209,31 @@ button {
 
 .title-page {
     background-color: #2E2F42;
-    max-width: 1440px;
+    max-width: 320px;
     margin: 0 auto;
-    padding: 188px 0;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+    padding: 72px 0;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-mobile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+@media screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2ddx),
+screen and (min-device-pixel-ratio: 2) {
+    .title-page {
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-mobile@2x.jpg);
+    }
+  }
+
 .title {
     color: #FFF;
-    font-size: 56px;
-    line-height: 1.07;
+    font-size: 36px;
+    line-height: 1.11;
     text-align: center;
     letter-spacing: 0.02em;
-    max-width: 496px;
+    max-width: 288px;
+    padding: 0 50px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -196,7 +248,7 @@ button {
     padding: 16px 32px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 48px;
+    margin-top: 72px;
     display: block;
     min-width: 169px;
     height: 56px;
@@ -209,8 +261,42 @@ button {
 .order-page:hover,
 .order-page:focus {
     background-color: #404BBF;
+} 
+
+@media (min-width: 768px){
+    .container {
+        max-width: 736px;
+    }
+    
+    .title-page {
+        padding: 112px 0;
+    }
+    
+    .title {
+        font-size: 56px;
+        line-height: 1.07;
+        max-width: 496px;
+        padding: 0;
+    }
+    
+    .order-page {
+        margin-top: 36px;
+    }
 }
 
+@media (min-width: 1158px) {
+    .container {
+        max-width: 1158px;
+    }
+    
+    .title-page {
+        padding: 188px 0;
+    }
+    
+    .order-page {
+        margin-top: 48px;
+    }
+}
 /* ========== section 1 ========== */
 
 /* ========== section 2 ========== */
@@ -230,11 +316,13 @@ button {
 }
 
 .menu-benefits {
-    gap: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 72px;
 }
 
 .benefits-item {
-    width: calc((100% - 3 * 24px) / 4);
+    max-width: 288px;
 }
 
 .benefits-icon-page {
@@ -251,24 +339,84 @@ button {
 
 .benefits-title {
     color: #2e2f42;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1.2;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
     letter-spacing: 0.02em;
-    margin-top: 8px;
     margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
 }
 
 .text-page {
     color: #434455;
+    font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
 
+@media (max-width: 1157px) {
+    .benefits-icon-page {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 736px;
+    }
+
+    .menu-benefits {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 24px;
+    }
+
+    .benefits-item {
+        max-width: 356px;
+        width: calc((100% - 24px) / 2);
+    }
+
+    .benefits-title {
+        display: block;
+    }
+}
+
+@media (min-width: 1158px) {
+    .container {
+        width: 1158px;
+    }
+    
+    .section {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .benefits-item {
+        max-width: 264px;
+        width: calc((100% - 3 * 24px) / 4);
+    }
+
+    .benefits-icon-page {
+        display: flex;
+    }
+
+    .benefits-title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+    }
+    
+    .text-page {
+        font-weight: 400;
+    }
+}
 /* ========== section 2 ========== */
 
 /* ========== section 3 ========== */
-
+/* 
 .personnel-page {
     background-color: #F4F4FD;
 }
@@ -319,7 +467,6 @@ button {
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
-
 .social-list {
     display: flex;
     gap: 24px;
@@ -357,10 +504,11 @@ button {
     fill: #F4F4FD;
 }
 
+ */
 /* ========== section 3 ========== */
 
 /* ========== section 4 ========== */
-
+/* 
 .portfolio-title {
     color: #2e2f42;
     font-size: 36px;
@@ -427,14 +575,14 @@ button {
     line-height: 1.2;
     letter-spacing: 0.02em;
     margin-bottom: 8px;
-}
+} */
 
 /* ========== section 4 ========== */
 
 /* ========== MAIN ========== */
 
 /* ========== FOOTER ========== */
-
+/* 
 .page-bottom {
     background-color: #2E2F42;
     color: #F4F4FD;
@@ -565,13 +713,56 @@ button {
 .footer-email-icons {
     margin-left: 16px;
     fill: #FFF;
-}
+} */
 
 /* ========== FOOTER ========== */
 
+/* ========== MENU MOBILE ========== */
+
+.backdrop-header-menu {
+    background-color: #FFF;
+    position: absolute;
+    padding: 72px 16px 40px 16px;
+    width: 320px;
+    height: 100%;
+}
+
+.menu-mobile-header {
+    flex-direction: column;
+}
+
+.link-mobile-menu {
+    color: #2e2f42;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1,11;
+}
+
+.menu-mobile-address {
+    margin-top: 168px;
+}
+
+.site-menu-mobile {
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1,2;
+}
+
+.menu-mobile-link {
+    font-family: Roboto;
+    font-style: normal;
+    color: #434455;
+}
+
+.current-mobile {
+    color: #404BBF;
+}
+/* ========== MENU MOBILE ========== */
+
 /* ========== FORM ========== */
 
-.backdrop {
+ .backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -784,6 +975,6 @@ button {
     border-radius: 4px;
     color: #FFF;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+} 
 
 /* ========== FORM ========== */
