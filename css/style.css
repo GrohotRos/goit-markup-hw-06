@@ -179,6 +179,10 @@ button {
         display: none;
     }
 
+    .backdrop-header-menu {
+        display: none;
+    }
+
     .site-header {
         width: 768px;
     }
@@ -188,6 +192,13 @@ button {
     .site-header {
         width: 1158px;
     }
+    
+    .site-address {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        width: 360px;
+    }
 
     .site-menu {
         display: flex;
@@ -196,9 +207,9 @@ button {
         column-gap: 40px;
     }
 
-    .top-container {
-        padding-left: 15px;
-        padding-right: 15px;
+    .address-link {
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
 }
 /* ========== HEADER ========== */
@@ -269,8 +280,18 @@ screen and (min-device-pixel-ratio: 2) {
     }
     
     .title-page {
+        max-width: 768px;
         padding: 112px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-tablet.jpg); ;
     }
+
+    @media screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2ddx),
+    screen and (min-device-pixel-ratio: 2) {
+        .title-page {
+          background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-tablet@2x.jpg);
+        }
+      }
     
     .title {
         font-size: 56px;
@@ -287,11 +308,23 @@ screen and (min-device-pixel-ratio: 2) {
 @media (min-width: 1158px) {
     .container {
         max-width: 1158px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     
     .title-page {
+        max-width: 1158px;
         padding: 188px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-pc.jpg); ;
     }
+
+    @media screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2ddx),
+    screen and (min-device-pixel-ratio: 2) {
+        .title-page {
+          background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-pc@2x.jpg);
+        }
+      }
     
     .order-page {
         margin-top: 48px;
@@ -467,6 +500,8 @@ screen and (min-device-pixel-ratio: 2) {
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
+
+ */
 .social-list {
     display: flex;
     gap: 24px;
@@ -504,7 +539,6 @@ screen and (min-device-pixel-ratio: 2) {
     fill: #F4F4FD;
 }
 
- */
 /* ========== section 3 ========== */
 
 /* ========== section 4 ========== */
@@ -582,28 +616,25 @@ screen and (min-device-pixel-ratio: 2) {
 /* ========== MAIN ========== */
 
 /* ========== FOOTER ========== */
-/* 
+
 .page-bottom {
     background-color: #2E2F42;
     color: #F4F4FD;
-    padding: 100px 0;
-    justify-content: space-between;
+    padding: 96px 0;
 }
 
 .page-footer-container {
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
 }
 
 .page-bottom-container {
     display: flex;
-    max-width: 50%;
-    margin-right: 120px;
     flex-direction: column;
 }
 
 .logo-footer {
-    margin-bottom: 16px;
+    margin-bottom: 17px;
     display: inline-block;
 }
 
@@ -614,7 +645,7 @@ screen and (min-device-pixel-ratio: 2) {
 .text-bottom {
     line-height: 1.5;
     letter-spacing: 0.02em;
-    max-width: 264px;
+    max-width: 288px;
 }
 
 .social-bottom-container {
@@ -713,18 +744,27 @@ screen and (min-device-pixel-ratio: 2) {
 .footer-email-icons {
     margin-left: 16px;
     fill: #FFF;
-} */
+}
 
 /* ========== FOOTER ========== */
 
 /* ========== MENU MOBILE ========== */
 
 .backdrop-header-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    width: 100%;
+    height: 100%;
     background-color: #FFF;
     position: absolute;
     padding: 72px 16px 40px 16px;
     width: 320px;
     height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 250ms linear;
 }
 
 .menu-mobile-header {
@@ -757,6 +797,13 @@ screen and (min-device-pixel-ratio: 2) {
 
 .current-mobile {
     color: #404BBF;
+}
+
+.social-list-mobile {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    margin-top: 48px;
 }
 /* ========== MENU MOBILE ========== */
 
