@@ -46,7 +46,7 @@ button {
 }
 
 .container {
-    max-width: 288px;
+    max-width: 320px;
     padding-left: 16px;
     padding-right: 16px;
     margin-left: auto;
@@ -71,15 +71,12 @@ button {
 }
 
 .top-container {
-    padding-left: 0;
-    padding-right: 0;
     display: flex;
     justify-content: space-between;
 }
 
 .site-navigation {
     display: flex;
-    width: 456px;
     justify-content: space-between;
     align-items: center;
 }
@@ -278,7 +275,7 @@ screen and (min-device-pixel-ratio: 2) {
 
 @media (min-width: 768px) {
     .container {
-        max-width: 736px;
+        max-width: 768px;
     }
 
     .title-page {
@@ -474,6 +471,7 @@ screen and (min-device-pixel-ratio: 2) {
     gap: 72px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .menu-our-team {
@@ -789,10 +787,15 @@ screen and (min-device-pixel-ratio: 2) {
 
 @media (min-width: 768px) {
     .page-footer-container {
+        max-width: 584px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 24px;
+        gap: 72px 24px;
+    }
+
+    .page-bottom-container {
+        margin-bottom: 0;
     }
 
     .logo-footer {
@@ -809,6 +812,7 @@ screen and (min-device-pixel-ratio: 2) {
 
     .social-bottom-container {
         align-items: flex-start;
+        margin-bottom: 0;
     }
 
     .mail-form {
@@ -835,6 +839,7 @@ screen and (min-device-pixel-ratio: 2) {
     }
 
     .page-footer-container {
+        max-width: none;
         align-items: baseline;
         gap: 0;
     }
